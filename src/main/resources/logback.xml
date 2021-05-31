@@ -1,0 +1,30 @@
+<!-- For more info see: https://logback.qos.ch/manual/appenders.html -->
+<configuration>
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder 
+			by default -->
+		<encoder>
+			<!-- TODO: Define a suitable pattern -->
+			<pattern>
+				%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<timestamp key="byDay" datePattern="yyyyMMdd -- HH:mm:ss" />
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>
+			./logs/asciifps-${byDay}.log
+		</file>
+		<append>true</append>
+		<encoder>
+			<pattern>
+				%-4relative [%thread] %-5level %logger{35} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	<root level="INFO">
+<!-- 		<appender-ref ref="STDOUT" /> -->
+		<appender-ref ref="FILE" />
+	</root>
+</configuration>
