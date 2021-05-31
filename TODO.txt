@@ -1,0 +1,7 @@
+LEAVE THE PROJECT IN A CONSISTENT STATE!!!!
+
+-Create a proper README.md for the project
+-Upload the current state to github
+-Decide wether the project will run in Linux terminal or in a simulated Swing terminal
+-Create a branch for the next version
+
